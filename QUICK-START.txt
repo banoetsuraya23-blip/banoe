@@ -1,0 +1,113 @@
+╔══════════════════════════════════════════════════════════════╗
+║                  NOE PORTFOLIO - QUICK START                 ║
+║              Portfolio Website for Banoe Izdihar Tsuraya     ║
+╚══════════════════════════════════════════════════════════════╝
+
+📦 INSTALLATION
+───────────────────────────────────────────────────────────────
+1. Open terminal/command prompt
+2. Navigate to project folder:
+   cd noe-portfolio
+
+3. Install dependencies:
+   npm install
+
+4. Start development server:
+   npm run dev
+
+5. Open browser: http://localhost:5173
+
+───────────────────────────────────────────────────────────────
+
+🎨 DESIGN COLORS
+───────────────────────────────────────────────────────────────
+Background:  #0B090A, #161A1D
+Accent:      #660708, #A4161A, #BA181B, #E5383B
+Text:        #D3D3D3, #F5F3F4, #FFFFFF
+Tertiary:    #B1A7A6
+
+───────────────────────────────────────────────────────────────
+
+📂 KEY FILES TO CUSTOMIZE
+───────────────────────────────────────────────────────────────
+Hero Section:        src/components/Hero.jsx
+About Section:       src/components/About.jsx
+Skills:              src/components/Skills.jsx
+Portfolio Projects:  src/components/Portfolio.jsx
+Certificates:        src/components/Certificates.jsx
+Contact Info:        src/components/Contact.jsx
+
+───────────────────────────────────────────────────────────────
+
+✅ TO-DO LIST
+───────────────────────────────────────────────────────────────
+[ ] Add profile photo (Hero section)
+[ ] Add certificate images (3 placeholders ready)
+[ ] Upload CV PDF file
+[ ] Add project screenshots
+[ ] Test on mobile devices
+[ ] Deploy to hosting platform
+
+───────────────────────────────────────────────────────────────
+
+🚀 BUILD & DEPLOY
+───────────────────────────────────────────────────────────────
+Build for production:
+  npm run build
+
+Preview production build:
+  npm run preview
+
+Deploy to Vercel:
+  npm install -g vercel
+  vercel
+
+Deploy to Netlify:
+  npm run build
+  (Upload 'dist' folder to Netlify)
+
+───────────────────────────────────────────────────────────────
+
+📞 CONTACT INFO (Already Configured)
+───────────────────────────────────────────────────────────────
+Email:     akhtarakifa57@gmail.com
+WhatsApp:  +62 878 9041 4910
+GitHub:    github.com/akhtarakifa
+LinkedIn:  linkedin.com/in/akhtar-akifa-sakhi-a47409360
+Instagram: instagram.com/akhtarakifa
+
+───────────────────────────────────────────────────────────────
+
+📚 DOCUMENTATION
+───────────────────────────────────────────────────────────────
+README.md        - Full documentation
+SETUP.md         - Detailed setup guide
+PROJECT-INFO.md  - Complete project information
+QUICK-START.txt  - This file
+
+───────────────────────────────────────────────────────────────
+
+💡 TIPS
+───────────────────────────────────────────────────────────────
+- Dark mode is default (toggle available in navbar)
+- All animations are automatic (AOS library)
+- Fully responsive for mobile, tablet, desktop
+- Smooth scroll navigation between sections
+- All external links open in new tabs
+
+───────────────────────────────────────────────────────────────
+
+🎯 TECH STACK
+───────────────────────────────────────────────────────────────
+React 18.3.1
+Vite 5.3.1
+Tailwind CSS 3.4.4
+AOS 2.3.4 (Animations)
+Typed.js 2.1.0 (Typing effect)
+Google Fonts (Roboto + Google Sans)
+
+───────────────────────────────────────────────────────────────
+
+Need help? Check README.md for detailed instructions!
+
+Built with ❤️ for Banoe Izdihar Tsuraya (Noe)

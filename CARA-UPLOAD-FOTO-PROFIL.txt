@@ -1,0 +1,179 @@
+═══════════════════════════════════════════════════════════════
+  📸 CARA UPLOAD FOTO PROFIL - LANGKAH MUDAH
+═══════════════════════════════════════════════════════════════
+
+🎯 FOTO YANG PERLU DIUPLOAD:
+   Foto Anda dengan background hijau (pose natural)
+
+═══════════════════════════════════════════════════════════════
+
+📋 LANGKAH 1: SIMPAN FOTO DARI CHAT
+
+1. Scroll ke atas di chat ini
+2. Cari foto profil Anda (background hijau, pose berdiri)
+3. Klik kanan pada foto
+4. Pilih "Save image as..." atau "Simpan gambar sebagai..."
+5. Ketik nama file: profile.jpg
+   ⚠️ PENTING: Huruf kecil semua, pakai .jpg
+6. Simpan ke Desktop (sementara)
+
+═══════════════════════════════════════════════════════════════
+
+📂 LANGKAH 2: COPY KE FOLDER PROJECT
+
+LOKASI TUJUAN:
+D:\Personal Branding\noe-portfolio\public\images\
+
+CARA COPY:
+
+Opsi A - File Explorer (Paling Mudah):
+1. Buka File Explorer (Windows + E)
+2. Navigate ke: D:\Personal Branding\noe-portfolio\public\images\
+3. Buka folder Desktop di window lain
+4. Copy file profile.jpg dari Desktop
+5. Paste ke folder images
+
+Opsi B - Drag & Drop di VS Code:
+1. Buka VS Code
+2. Di sidebar kiri, klik folder "noe-portfolio"
+3. Expand: public → images
+4. Drag file profile.jpg dari Desktop
+5. Drop ke folder images di VS Code
+
+═══════════════════════════════════════════════════════════════
+
+✅ LANGKAH 3: VERIFY
+
+Check di VS Code:
+1. Buka folder: noe-portfolio/public/images/
+2. Pastikan ada file: profile.jpg
+
+Struktur harus seperti ini:
+noe-portfolio/
+└── public/
+    └── images/
+        └── profile.jpg  ← File Anda ada di sini
+
+═══════════════════════════════════════════════════════════════
+
+🚀 LANGKAH 4: TEST DI BROWSER
+
+1. Buka Terminal/Command Prompt
+2. Ketik:
+   cd noe-portfolio
+   npm run dev
+
+3. Buka browser: http://localhost:5173
+
+4. Check Hero section (paling atas):
+   ✅ Foto profil muncul di kiri (circular dengan glow maroon)
+   ✅ Deskripsi ada di kanan
+   ✅ Hover zoom berfungsi
+
+═══════════════════════════════════════════════════════════════
+
+⚠️ PENTING - NAMA FILE HARUS EXACT:
+
+✅ BENAR:
+   profile.jpg  (lowercase, .jpg)
+
+❌ SALAH:
+   Profile.jpg  (capital P)
+   PROFILE.jpg  (semua capital)
+   profile.JPG  (capital JPG)
+   profile.png  (format png)
+   profil.jpg   (typo)
+
+═══════════════════════════════════════════════════════════════
+
+⚠️ PENTING - LOKASI HARUS EXACT:
+
+✅ BENAR:
+   noe-portfolio/public/images/profile.jpg
+
+❌ SALAH:
+   noe-portfolio/public/profile.jpg
+   noe-portfolio/images/profile.jpg
+   noe-portfolio/src/images/profile.jpg
+
+═══════════════════════════════════════════════════════════════
+
+❓ TROUBLESHOOTING
+
+Problem: Foto tidak muncul di website
+
+Solution 1 - Check nama file:
+   cd noe-portfolio/public/images
+   dir
+   → Harus muncul: profile.jpg
+
+Solution 2 - Check browser console:
+   Tekan F12 di browser
+   Lihat tab Console
+   Cari error 404
+
+Solution 3 - Clear cache:
+   Tekan: Ctrl + Shift + R
+
+Solution 4 - Restart server:
+   Ctrl + C (stop)
+   npm run dev (start lagi)
+
+═══════════════════════════════════════════════════════════════
+
+🎨 HASIL AKHIR:
+
+Hero Section akan terlihat seperti ini:
+
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│    ╭─────────╮                                          │
+│   ╱           ╲         Hello, I'm                      │
+│  │   FOTO      │        Banoe Izdihar Tsuraya           │
+│  │   ANDA      │        Modern Developer Vibe           │
+│  │   BULAT     │        [Deskripsi panjang...]          │
+│   ╲  GLOW    ╱         [View My Work] [Get in Touch]   │
+│    ╰─────────╯         [Instagram] [WhatsApp]           │
+│     ↑ Maroon                                            │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+Foto Anda (KIRI)          Deskripsi (KANAN)
+
+═══════════════════════════════════════════════════════════════
+
+📝 CHECKLIST:
+
+Sebelum test:
+□ Foto sudah disimpan dari chat
+□ Nama file: profile.jpg (lowercase)
+□ File sudah di-copy ke: noe-portfolio/public/images/
+□ Verify file ada di folder images
+
+Setelah upload:
+□ npm run dev sudah dijalankan
+□ Browser dibuka: http://localhost:5173
+□ Foto profil muncul di Hero section (kiri)
+□ Glow maroon terlihat
+□ Hover zoom berfungsi
+
+═══════════════════════════════════════════════════════════════
+
+💡 TIPS:
+
+• Foto akan otomatis jadi circular (lingkaran)
+• Glow maroon akan otomatis muncul
+• Tidak perlu edit code lagi
+• Tinggal upload file, langsung jadi!
+
+═══════════════════════════════════════════════════════════════
+
+🎯 RINGKASAN SINGKAT:
+
+1. Simpan foto dari chat → profile.jpg
+2. Copy ke: D:\Personal Branding\noe-portfolio\public\images\
+3. Run: npm run dev
+4. Buka: http://localhost:5173
+5. Selesai! ✨
+
+═══════════════════════════════════════════════════════════════

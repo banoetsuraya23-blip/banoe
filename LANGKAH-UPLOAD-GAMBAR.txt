@@ -1,0 +1,80 @@
+═══════════════════════════════════════════════════════════
+  📸 CARA UPLOAD GAMBAR - 3 LANGKAH MUDAH
+═══════════════════════════════════════════════════════════
+
+🎯 YANG PERLU ANDA LAKUKAN:
+
+┌─────────────────────────────────────────────────────────┐
+│ LANGKAH 1: SIMPAN GAMBAR DARI CHAT                     │
+└─────────────────────────────────────────────────────────┘
+
+1. Klik kanan pada FOTO PROFIL Anda di chat
+   → Pilih "Save image as..."
+   → Simpan dengan nama: profile.jpg
+   → Lokasi: Desktop (sementara)
+
+2. Klik kanan pada SCREENSHOT ROBLOXIN AJA di chat
+   → Pilih "Save image as..."
+   → Simpan dengan nama: robloxin-aja.jpg
+   → Lokasi: Desktop (sementara)
+
+┌─────────────────────────────────────────────────────────┐
+│ LANGKAH 2: COPY KE FOLDER PROJECT                      │
+└─────────────────────────────────────────────────────────┘
+
+Buka File Explorer, navigate ke:
+D:\Personal Branding\noe-portfolio\public\images\
+
+Copy kedua file dari Desktop ke folder ini:
+✅ profile.jpg
+✅ robloxin-aja.jpg
+
+┌─────────────────────────────────────────────────────────┐
+│ LANGKAH 3: TEST DI BROWSER                             │
+└─────────────────────────────────────────────────────────┘
+
+Buka Terminal/Command Prompt:
+cd noe-portfolio
+npm run dev
+
+Buka browser:
+http://localhost:5173
+
+Check:
+✅ Hero section (atas) - Foto profil circular di kiri
+✅ About section - Foto profil rectangular di tengah
+✅ Portfolio section - Screenshot Robloxin Aja
+
+═══════════════════════════════════════════════════════════
+
+📂 STRUKTUR FOLDER YANG BENAR:
+
+noe-portfolio/
+└── public/
+    └── images/
+        ├── profile.jpg          ← Foto Anda
+        └── robloxin-aja.jpg     ← Screenshot website
+
+═══════════════════════════════════════════════════════════
+
+⚠️ PENTING:
+
+• Nama file HARUS lowercase (huruf kecil semua)
+• Nama file HARUS exact match:
+  ✅ profile.jpg
+  ✅ robloxin-aja.jpg
+  ❌ Profile.jpg (salah)
+  ❌ robloxin_aja.jpg (salah)
+
+• Lokasi HARUS di: public/images/
+  ✅ public/images/profile.jpg
+  ❌ public/profile.jpg (salah)
+
+═══════════════════════════════════════════════════════════
+
+🎉 SELESAI!
+
+Setelah upload, gambar langsung muncul di website!
+Tidak perlu edit code lagi!
+
+═══════════════════════════════════════════════════════════

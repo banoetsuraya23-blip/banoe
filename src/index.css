@@ -1,0 +1,1304 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Sans fallback to system fonts */
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Google Sans'), local('GoogleSans-Regular'), 
+       url('https://fonts.gstatic.com/s/googlesans/v14/4UaGrENHsxJlGDuGo1OIlL3Owp5eKQtG.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Google Sans Medium'), local('GoogleSans-Medium'),
+       url('https://fonts.gstatic.com/s/googlesans/v14/4UabrENHsxJlGDuGo1OIlLU94YtzCwZsPF4o.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Google Sans Bold'), local('GoogleSans-Bold'),
+       url('https://fonts.gstatic.com/s/googlesans/v14/4UabrENHsxJlGDuGo1OIlLV154tzCwZsPF4o.woff2') format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 border-2 border-accent text-accent font-medium rounded-lg 
+           transition-all duration-300 hover:bg-accent hover:text-bg-primary 
+           hover:shadow-lg hover:shadow-accent/20;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-accent text-text-white font-medium rounded-lg 
+           transition-all duration-300 hover:bg-accent-light 
+           hover:shadow-lg hover:shadow-accent/20;
+  }
+
+  .card {
+    @apply bg-bg-secondary border border-bg-tertiary/20 rounded-xl p-6 
+           transition-all duration-300 hover:-translate-y-1 hover:shadow-xl 
+           hover:shadow-accent/10;
+  }
+
+  .section-heading {
+    @apply font-heading text-4xl md:text-5xl font-bold tracking-tighter 
+           text-accent mb-4;
+  }
+
+  .section-subheading {
+    @apply font-heading text-2xl md:text-3xl font-semibold tracking-tight 
+           text-text-light mb-3;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  33% {
+    transform: translateY(-25px) translateX(-15px) scale(1.05);
+  }
+  66% {
+    transform: translateY(-15px) translateX(15px) scale(0.95);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-40px) translateX(20px) rotate(5deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-width {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scaleX(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes progress-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+@keyframes move-diagonal {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100px, 100px);
+  }
+}
+
+@keyframes move-horizontal {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-150px);
+  }
+}
+
+@keyframes move-vertical {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes move-reverse {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-120px, 80px);
+  }
+}
+
+/* No Gravity Animations */
+@keyframes float-up-1 {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-100px) rotate(180deg);
+  }
+}
+
+@keyframes float-up-2 {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-120px) scale(1.2);
+  }
+}
+
+@keyframes float-up-3 {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-80px) rotate(360deg);
+  }
+}
+
+@keyframes float-up-4 {
+  0%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(-90px) rotate(225deg);
+  }
+}
+
+@keyframes float-diagonal-1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(12deg);
+  }
+  50% {
+    transform: translate(-80px, -80px) rotate(192deg);
+  }
+}
+
+@keyframes float-diagonal-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, -60px) scale(0.8);
+  }
+}
+
+@keyframes float-slow-1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-40px, -60px);
+  }
+  66% {
+    transform: translate(40px, -30px);
+  }
+}
+
+@keyframes float-slow-2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(45deg);
+  }
+  33% {
+    transform: translate(-30px, -40px) rotate(135deg);
+  }
+  66% {
+    transform: translate(30px, -50px) rotate(225deg);
+  }
+}
+
+@keyframes float-tiny-1 {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-150px);
+    opacity: 1;
+  }
+}
+
+@keyframes float-tiny-2 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-100px, -100px);
+    opacity: 1;
+  }
+}
+
+@keyframes float-tiny-3 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(80px, -120px);
+    opacity: 1;
+  }
+}
+
+@keyframes drift-1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50px, -30px);
+  }
+}
+
+@keyframes drift-2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-40px, 20px);
+  }
+}
+
+/* Maroon Glow Effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Navbar Active Indicator Bounce */
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -4px);
+  }
+}
+
+/* Abstract Shape Animations */
+@keyframes float-abstract-1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+  }
+  33% {
+    transform: translate(-30px, -50px) rotate(120deg) scale(1.1);
+    border-radius: 60% 40% 30% 70% / 40% 60% 70% 30%;
+  }
+  66% {
+    transform: translate(20px, -80px) rotate(240deg) scale(0.9);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+@keyframes float-abstract-2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    border-radius: 60% 40% 30% 70% / 40% 60% 70% 30%;
+  }
+  50% {
+    transform: translate(40px, -100px) rotate(180deg);
+    border-radius: 30% 70% 40% 60% / 70% 30% 60% 40%;
+  }
+}
+
+@keyframes float-abstract-3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  50% {
+    transform: translate(-25px, -60px) rotate(360deg) scale(1.2);
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  }
+}
+
+@keyframes blob-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+  }
+  33% {
+    transform: translate(-40px, -30px) scale(1.1);
+    border-radius: 30% 70% 50% 50% / 60% 30% 70% 40%;
+  }
+  66% {
+    transform: translate(30px, -50px) scale(0.95);
+    border-radius: 50% 50% 70% 30% / 40% 70% 30% 60%;
+  }
+}
+
+@keyframes blob-2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+  }
+  50% {
+    transform: translate(50px, -40px) rotate(180deg);
+    border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%;
+  }
+}
+
+@keyframes blob-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    border-radius: 50% 50% 30% 70% / 50% 50% 70% 30%;
+  }
+  50% {
+    transform: translate(-35px, 40px) scale(1.15);
+    border-radius: 30% 70% 50% 50% / 70% 30% 50% 50%;
+  }
+}
+
+@keyframes float-slow-abstract {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
+  }
+  33% {
+    transform: translate(-50px, -40px) rotate(120deg);
+    border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%;
+  }
+  66% {
+    transform: translate(30px, -60px) rotate(240deg);
+    border-radius: 70% 30% 60% 40% / 30% 70% 40% 60%;
+  }
+}
+
+@keyframes drift-abstract {
+  0%, 100% {
+    transform: translate(0, 0);
+    border-radius: 30% 70% 40% 60% / 70% 30% 60% 40%;
+  }
+  50% {
+    transform: translate(60px, 30px);
+    border-radius: 70% 30% 60% 40% / 30% 70% 40% 60%;
+  }
+}
+
+/* Speed Trail Animations - Like Vehicle Backlights */
+@keyframes speed-trail-1 {
+  0% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-2 {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-3 {
+  0% {
+    transform: translateX(-100vw) translateY(20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-4 {
+  0% {
+    transform: translateX(100vw) translateY(-15px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(15px);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-5 {
+  0% {
+    transform: translateX(-100vw) translateY(-10px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-6 {
+  0% {
+    transform: translateX(100vw) translateY(25px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(-25px);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-7 {
+  0% {
+    transform: translateX(-100vw) translateY(15px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-15px);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-8 {
+  0% {
+    transform: translateX(100vw) translateY(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(20px);
+    opacity: 0;
+  }
+}
+
+/* Vertical Speed Trail Animations - Top to Bottom & Bottom to Top */
+@keyframes speed-trail-vertical-1 {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-vertical-2 {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-vertical-3 {
+  0% {
+    transform: translateY(-100vh) translateX(15px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-15px);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-vertical-4 {
+  0% {
+    transform: translateY(100vh) translateX(-10px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-vertical-5 {
+  0% {
+    transform: translateY(-100vh) translateX(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes speed-trail-vertical-6 {
+  0% {
+    transform: translateY(100vh) translateX(12px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(-12px);
+    opacity: 0;
+  }
+}
+
+/* Particle Trail Animations */
+@keyframes particle-trail-1 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-150px, -200px);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-trail-2 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(120px, -180px);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-trail-3 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-100px, 160px);
+    opacity: 0;
+  }
+}
+
+/* Diagonal Speed Lines */
+@keyframes diagonal-speed-1 {
+  0% {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes diagonal-speed-2 {
+  0% {
+    transform: translateY(-100vh) rotate(-45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes diagonal-speed-3 {
+  0% {
+    transform: translateY(-100vh) rotate(30deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+/* Frontlight Trail Animations - Horizontal (Brighter & Wider) */
+@keyframes frontlight-trail-1 {
+  0% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes frontlight-trail-2 {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+}
+
+@keyframes frontlight-trail-3 {
+  0% {
+    transform: translateX(-100vw) translateY(15px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.78;
+  }
+  90% {
+    opacity: 0.78;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-15px);
+    opacity: 0;
+  }
+}
+
+@keyframes frontlight-trail-4 {
+  0% {
+    transform: translateX(100vw) translateY(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes frontlight-trail-5 {
+  0% {
+    transform: translateX(-100vw) translateY(-12px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.73;
+  }
+  90% {
+    opacity: 0.73;
+  }
+  100% {
+    transform: translateX(100vw) translateY(12px);
+    opacity: 0;
+  }
+}
+
+@keyframes frontlight-trail-6 {
+  0% {
+    transform: translateX(100vw) translateY(18px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.77;
+  }
+  90% {
+    opacity: 0.77;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(-18px);
+    opacity: 0;
+  }
+}
+
+/* Frontlight Trail Animations - Vertical (Brighter & Wider) */
+@keyframes frontlight-trail-vertical-1 {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes frontlight-trail-vertical-2 {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes frontlight-trail-vertical-3 {
+  0% {
+    transform: translateY(-100vh) translateX(12px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.78;
+  }
+  90% {
+    opacity: 0.78;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-12px);
+    opacity: 0;
+  }
+}
+
+@keyframes frontlight-trail-vertical-4 {
+  0% {
+    transform: translateY(100vh) translateX(-15px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(15px);
+    opacity: 0;
+  }
+}
+
+/* Ambient Glow Animations */
+@keyframes ambient-glow-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50px, -30px) scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes ambient-glow-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(40px, 40px) scale(1.15);
+    opacity: 0.6;
+  }
+}
+
+@keyframes ambient-glow-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-30px, 50px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 25s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-slow {
+  animation: float-slow 30s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 15s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-pulse-width {
+  animation: pulse-width 2s ease-in-out infinite;
+}
+
+.animate-progress-shine {
+  animation: progress-shine 2s ease-in-out infinite;
+}
+
+.animate-move-diagonal {
+  animation: move-diagonal 20s ease-in-out infinite;
+}
+
+.animate-move-horizontal {
+  animation: move-horizontal 25s ease-in-out infinite;
+}
+
+.animate-move-vertical {
+  animation: move-vertical 18s ease-in-out infinite;
+}
+
+.animate-move-reverse {
+  animation: move-reverse 22s ease-in-out infinite;
+}
+
+/* No Gravity Animation Classes */
+.animate-float-up-1 {
+  animation: float-up-1 15s ease-in-out infinite;
+}
+
+.animate-float-up-2 {
+  animation: float-up-2 18s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-up-3 {
+  animation: float-up-3 12s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.animate-float-up-4 {
+  animation: float-up-4 16s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-float-diagonal-1 {
+  animation: float-diagonal-1 20s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.animate-float-diagonal-2 {
+  animation: float-diagonal-2 14s ease-in-out infinite;
+  animation-delay: 5s;
+}
+
+.animate-float-slow-1 {
+  animation: float-slow-1 25s ease-in-out infinite;
+}
+
+.animate-float-slow-2 {
+  animation: float-slow-2 22s ease-in-out infinite;
+  animation-delay: 6s;
+}
+
+.animate-float-tiny-1 {
+  animation: float-tiny-1 10s ease-in-out infinite;
+}
+
+.animate-float-tiny-2 {
+  animation: float-tiny-2 13s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-tiny-3 {
+  animation: float-tiny-3 11s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.animate-drift-1 {
+  animation: drift-1 30s ease-in-out infinite;
+}
+
+.animate-drift-2 {
+  animation: drift-2 35s ease-in-out infinite;
+  animation-delay: 10s;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+/* Abstract Shape Animation Classes */
+.animate-float-abstract-1 {
+  animation: float-abstract-1 20s ease-in-out infinite;
+}
+
+.animate-float-abstract-2 {
+  animation: float-abstract-2 18s ease-in-out infinite;
+}
+
+.animate-float-abstract-3 {
+  animation: float-abstract-3 16s ease-in-out infinite;
+}
+
+.animate-blob-1 {
+  animation: blob-1 25s ease-in-out infinite;
+}
+
+.animate-blob-2 {
+  animation: blob-2 22s ease-in-out infinite;
+}
+
+.animate-blob-3 {
+  animation: blob-3 24s ease-in-out infinite;
+}
+
+.animate-float-slow-abstract {
+  animation: float-slow-abstract 30s ease-in-out infinite;
+}
+
+.animate-drift-abstract {
+  animation: drift-abstract 28s ease-in-out infinite;
+}
+
+/* Speed Trail Animation Classes */
+.animate-speed-trail-1 {
+  animation: speed-trail-1 3s linear infinite;
+}
+
+.animate-speed-trail-2 {
+  animation: speed-trail-2 2.5s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-speed-trail-3 {
+  animation: speed-trail-3 3.5s linear infinite;
+  animation-delay: 1s;
+}
+
+.animate-speed-trail-4 {
+  animation: speed-trail-4 2.8s linear infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-speed-trail-5 {
+  animation: speed-trail-5 3.2s linear infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-speed-trail-6 {
+  animation: speed-trail-6 2.6s linear infinite;
+  animation-delay: 1.8s;
+}
+
+.animate-speed-trail-7 {
+  animation: speed-trail-7 3.4s linear infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-speed-trail-8 {
+  animation: speed-trail-8 2.9s linear infinite;
+  animation-delay: 2.2s;
+}
+
+/* Vertical Speed Trail Animation Classes */
+.animate-speed-trail-vertical-1 {
+  animation: speed-trail-vertical-1 3.5s linear infinite;
+}
+
+.animate-speed-trail-vertical-2 {
+  animation: speed-trail-vertical-2 3s linear infinite;
+  animation-delay: 0.7s;
+}
+
+.animate-speed-trail-vertical-3 {
+  animation: speed-trail-vertical-3 3.8s linear infinite;
+  animation-delay: 1.4s;
+}
+
+.animate-speed-trail-vertical-4 {
+  animation: speed-trail-vertical-4 3.2s linear infinite;
+  animation-delay: 2.1s;
+}
+
+.animate-speed-trail-vertical-5 {
+  animation: speed-trail-vertical-5 3.6s linear infinite;
+  animation-delay: 0.4s;
+}
+
+.animate-speed-trail-vertical-6 {
+  animation: speed-trail-vertical-6 3.3s linear infinite;
+  animation-delay: 1.8s;
+}
+
+/* Particle Trail Animation Classes */
+.animate-particle-trail-1 {
+  animation: particle-trail-1 8s ease-in-out infinite;
+}
+
+.animate-particle-trail-2 {
+  animation: particle-trail-2 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-particle-trail-3 {
+  animation: particle-trail-3 9s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+/* Diagonal Speed Animation Classes */
+.animate-diagonal-speed-1 {
+  animation: diagonal-speed-1 4s linear infinite;
+}
+
+.animate-diagonal-speed-2 {
+  animation: diagonal-speed-2 3.5s linear infinite;
+  animation-delay: 1s;
+}
+
+.animate-diagonal-speed-3 {
+  animation: diagonal-speed-3 4.5s linear infinite;
+  animation-delay: 2s;
+}
+
+/* Frontlight Trail Animation Classes - Horizontal */
+.animate-frontlight-trail-1 {
+  animation: frontlight-trail-1 2.2s linear infinite;
+}
+
+.animate-frontlight-trail-2 {
+  animation: frontlight-trail-2 2s linear infinite;
+  animation-delay: 0.6s;
+}
+
+.animate-frontlight-trail-3 {
+  animation: frontlight-trail-3 2.4s linear infinite;
+  animation-delay: 1.2s;
+}
+
+.animate-frontlight-trail-4 {
+  animation: frontlight-trail-4 2.1s linear infinite;
+  animation-delay: 1.7s;
+}
+
+.animate-frontlight-trail-5 {
+  animation: frontlight-trail-5 2.3s linear infinite;
+  animation-delay: 0.9s;
+}
+
+.animate-frontlight-trail-6 {
+  animation: frontlight-trail-6 2.05s linear infinite;
+  animation-delay: 2s;
+}
+
+/* Frontlight Trail Animation Classes - Vertical */
+.animate-frontlight-trail-vertical-1 {
+  animation: frontlight-trail-vertical-1 2.5s linear infinite;
+}
+
+.animate-frontlight-trail-vertical-2 {
+  animation: frontlight-trail-vertical-2 2.2s linear infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-frontlight-trail-vertical-3 {
+  animation: frontlight-trail-vertical-3 2.6s linear infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-frontlight-trail-vertical-4 {
+  animation: frontlight-trail-vertical-4 2.3s linear infinite;
+  animation-delay: 2.3s;
+}
+
+/* Ambient Glow Animation Classes */
+.animate-ambient-glow-1 {
+  animation: ambient-glow-1 20s ease-in-out infinite;
+}
+
+.animate-ambient-glow-2 {
+  animation: ambient-glow-2 25s ease-in-out infinite;
+  animation-delay: 5s;
+}
+
+.animate-ambient-glow-3 {
+  animation: ambient-glow-3 22s ease-in-out infinite;
+  animation-delay: 10s;
+}
