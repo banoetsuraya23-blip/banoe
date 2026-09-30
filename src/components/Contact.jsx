@@ -13,8 +13,8 @@ const Contact = () => {
     setIsSubmitting(true)
     
     // Create mailto link with form data
-    const subject = encodeURIComponent(`Pesan dari ${formData.name}`)
-    const body = encodeURIComponent(`Nama: ${formData.name}\nEmail: ${formData.email}\n\nPesan:\n${formData.message}`)
+    const subject = encodeURIComponent(`Message from ${formData.name}`)
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)
     const mailtoLink = `mailto:banoe.tsuraya23@gmail.com?subject=${subject}&body=${body}`
     
     // Open mailto link
@@ -52,7 +52,7 @@ const Contact = () => {
               {/* Name Input */}
               <div>
                 <label htmlFor="name" className="block text-text-light font-medium mb-2">
-                  Nama
+                  Name
                 </label>
                 <input
                   type="text"
@@ -62,7 +62,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-bg-secondary border border-bg-tertiary/30 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-accent transition-colors duration-300"
-                  placeholder="Nama Anda"
+                  placeholder="Your Name"
                 />
               </div>
 
@@ -86,7 +86,7 @@ const Contact = () => {
               {/* Message Textarea */}
               <div>
                 <label htmlFor="message" className="block text-text-light font-medium mb-2">
-                  Pesan
+                  Message
                 </label>
                 <textarea
                   id="message"
@@ -96,7 +96,7 @@ const Contact = () => {
                   required
                   rows="6"
                   className="w-full px-4 py-3 bg-bg-secondary border border-bg-tertiary/30 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-accent transition-colors duration-300 resize-none"
-                  placeholder="Tulis pesan Anda di sini..."
+                  placeholder="Write your message here..."
                 />
               </div>
 
@@ -111,14 +111,14 @@ const Contact = () => {
                     <svg className="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
-                    Mengirim...
+                    Sending...
                   </>
                 ) : (
                   <>
                     <svg className="w-5 h-5 -rotate-[30deg] group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>
-                    Kirim Pesan
+                    Send Message
                   </>
                 )}
               </button>

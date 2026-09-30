@@ -73,11 +73,11 @@ const Hero = () => {
               <span ref={typedRef}></span>
             </h2>
             <p className="text-text-muted text-lg leading-relaxed mb-8 max-w-xl">
-              Seorang pengembang web yang berfokus pada front-end dan sedang mempersiapkan diri menjadi Software Engineer. 
-              Saya adalah anak pertama dari tiga bersaudara dan lahir serta besar di Semarang, Jawa Tengah. 
-              Saat ini saya menempuh pendidikan di SMK Negeri 7 Semarang pada jurusan Sistem Informasi, Jaringan, dan Aplikasi (SIJA). 
-              Saya memiliki ketertarikan yang tinggi di bidang pemrograman dan terus belajar untuk mengembangkan kemampuan 
-              dalam membangun produk digital yang berguna dan relevan.
+              A web developer focused on front-end development and preparing to become a Software Engineer. 
+              I am the first of three siblings, born and raised in Semarang, Central Java. 
+              Currently, I am pursuing my education at SMK Negeri 7 Semarang, majoring in Information Systems, Networks, and Applications (SIJA). 
+              I have a strong interest in programming and continuously learning to develop my skills 
+              in building useful and relevant digital products.
             </p>
 
             {/* CTA Buttons */}

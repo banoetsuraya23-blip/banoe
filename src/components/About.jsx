@@ -12,7 +12,7 @@ const About = () => {
           <div data-aos="fade-right" className="bg-bg-secondary/50 backdrop-blur-sm border border-bg-tertiary/10 rounded-3xl p-8 transition-all duration-500 hover:bg-bg-secondary/70 hover:border-accent/20 hover:shadow-2xl hover:shadow-accent/5 hover:-translate-y-2 hover:scale-[1.02] h-full">
             <h3 className="font-heading text-2xl md:text-3xl font-semibold tracking-tight text-text-light mb-4">Background</h3>
             <p className="text-text-muted leading-relaxed">
-              Anak pertama dari tiga bersaudara yang lahir dan besar di Semarang. Ketertarikan pada dunia teknologi mulai tumbuh sejak SMP, khususnya di bidang web development. Sejak saat itu mulai mempelajari dasar-dasar pembuatan website dan terus mengembangkan kemampuan di bidang front-end development. Saat ini fokus mempelajari pengembangan tampilan website yang modern, responsif, dan user-friendly melalui berbagai project pribadi. Memiliki semangat belajar tinggi dan terus mempersiapkan diri untuk berkarier sebagai software engineer di masa depan.
+              First of three siblings, born and raised in Semarang. Interest in technology began to grow during junior high school, especially in web development. Since then, started learning the basics of website creation and continuously developing skills in front-end development. Currently focused on learning modern, responsive, and user-friendly website development through various personal projects. Possessing a high enthusiasm for learning and continuously preparing for a career as a software engineer in the future.
             </p>
           </div>
 
@@ -45,7 +45,7 @@ const About = () => {
           <div data-aos="fade-right" className="bg-bg-secondary/50 backdrop-blur-sm border border-bg-tertiary/10 rounded-3xl p-8 transition-all duration-500 hover:bg-bg-secondary/70 hover:border-accent/20 hover:shadow-2xl hover:shadow-accent/5 hover:-translate-y-2 hover:scale-[1.02] h-full">
             <h3 className="font-heading text-2xl md:text-3xl font-semibold tracking-tight text-text-light mb-4">Interests & Hobbies</h3>
             <div className="flex flex-wrap gap-3">
-              {['Membaca Komik', 'Bermain Game', 'Mendengarkan Musik', 'Menonton Film', 'Coding', 'Design', 'Teknologi', 'Olahraga'].map((hobby) => (
+              {['Reading Comics', 'Playing Games', 'Listening to Music', 'Watching Movies', 'Coding', 'Design', 'Technology', 'Sports'].map((hobby) => (
                 <span 
                   key={hobby}
                   className="px-4 py-2.5 bg-accent/10 border border-accent/30 rounded-2xl text-accent hover:bg-accent hover:text-bg-primary hover:scale-110 hover:-translate-y-1 hover:rotate-2 transition-all duration-300 cursor-pointer shadow-lg shadow-accent/0 hover:shadow-accent/20 text-sm"
@@ -59,15 +59,15 @@ const About = () => {
           <div data-aos="fade-left" className="bg-bg-secondary/50 backdrop-blur-sm border border-bg-tertiary/10 rounded-3xl p-8 transition-all duration-500 hover:bg-bg-secondary/70 hover:border-accent/20 hover:shadow-2xl hover:shadow-accent/5 hover:-translate-y-2 hover:scale-[1.02] h-full">
             <h3 className="font-heading text-2xl md:text-3xl font-semibold tracking-tight text-text-light mb-4">Career Goals</h3>
             <p className="text-text-muted leading-relaxed mb-4">
-              Fokus menjadi <span className="text-accent font-semibold">Web Developer</span> yang kompeten 
-              dan <span className="text-accent font-semibold">Data Analyst</span>. Terus belajar teknologi 
-              baru dan best practices untuk membangun aplikasi yang efisien dan bermanfaat.
+              Focused on becoming a competent <span className="text-accent font-semibold">Web Developer</span> 
+              and <span className="text-accent font-semibold">Data Analyst</span>. Continuously learning new technologies 
+              and best practices to build efficient and useful applications.
             </p>
             <div className="flex items-center gap-2 text-accent group cursor-pointer">
               <svg className="w-5 h-5 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              <span className="font-medium group-hover:font-bold group-hover:text-accent-light group-hover:tracking-wide transition-all duration-300">Terus belajar, terus berkembang</span>
+              <span className="font-medium group-hover:font-bold group-hover:text-accent-light group-hover:tracking-wide transition-all duration-300">Keep learning, keep growing</span>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ const About = () => {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Unduh CV
+              Download CV
             </span>
           </a>
           

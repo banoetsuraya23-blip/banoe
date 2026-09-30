@@ -4,7 +4,7 @@ const Portfolio = () => {
       title: 'Robloxin Aja',
       subtitle: 'Gaming Community Website',
       description:
-        'Website ini berisi konten seputar game Roblox, seperti informasi, tips, atau penawaran terkait akun dan fitur dalam game. Targetnya adalah pemain Roblox yang ingin mendapatkan tambahan pengalaman atau keuntungan tertentu saat bermain.',
+        'This website contains content about the Roblox game, such as information, tips, or offers related to accounts and in-game features. The target audience is Roblox players who want to gain additional experience or benefits while playing.',
       tags: ['React', 'JavaScript', 'Web Design'],
       github: 'https://github.com/akhtarakifa/Robloxin-Aja',
       demo: 'https://robloxinaja.pages.dev/',
